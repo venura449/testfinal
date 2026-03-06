@@ -247,7 +247,7 @@ export default function NotificationBell() {
               )}
 
               <AnimatePresence initial={false}>
-                {filtered.map((n) => {
+                {filtered.map((n, index) => {
                   const nType = guessType(n.message);
                   const dot =
                     nType === "BOOKING"
