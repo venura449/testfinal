@@ -261,7 +261,7 @@ public class BookingService {
             ByteArrayOutputStream output = new ByteArrayOutputStream();
             MatrixToImageWriter.writeToStream(matrix, "PNG", output);
             return output.toByteArray();
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             throw new ApiException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to generate QR code");
         }
     }
