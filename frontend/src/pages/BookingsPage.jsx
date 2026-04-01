@@ -231,7 +231,7 @@ export default function BookingsPage() {
   const [successMessage, setSuccessMessage] = useState("");
   const [showFormModal, setShowFormModal] = useState(false);
   const [submittingBooking, setSubmittingBooking] = useState(false);
-  const [loadingBookings, setLoadingBookings] = useState(true);
+  const [loadingBookings, setLoadingBookings] = React.useState(true);
   const [page, setPage] = useState(10);
   const [now, setNow] = useState(() => Date.now());
 
