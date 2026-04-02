@@ -89,3 +89,5 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
+// refactored: 2026-04-02T11:20:23
