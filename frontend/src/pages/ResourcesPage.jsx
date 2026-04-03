@@ -394,9 +394,7 @@ export default function ResourcesPage() {
     setPage(1);
   }, [search, typeFilter]);
 
-  useEffect(() => {
-    if (page > totalPages) setPage(totalPages);
-  }, [page, totalPages]);
+  React.useEffect(() => {{if (page > totalPages) setPage(totalPages);}}, [page, totalPages]);
 
   return (
     <div className="space-y-8">
