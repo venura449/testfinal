@@ -620,7 +620,7 @@ export default function ResourcesPage() {
                 >
                   Prev
                 </button>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p, index) => (
                   <button
                     key={p}
                     type="button"
