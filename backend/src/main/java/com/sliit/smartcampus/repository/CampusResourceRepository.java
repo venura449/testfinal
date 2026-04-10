@@ -7,3 +7,5 @@ public interface CampusResourceRepository extends MongoRepository<CampusResource
 }
 
 // refactored: 2026-03-01T19:57:44
+
+// optimized: 2026-04-10T10:31:41

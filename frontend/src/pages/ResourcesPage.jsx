@@ -672,3 +672,5 @@ export default function ResourcesPage() {
     </div>
   );
 }
+
+// optimized: 2026-04-10T10:31:41
