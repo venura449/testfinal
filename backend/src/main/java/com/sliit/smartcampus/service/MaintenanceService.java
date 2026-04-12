@@ -260,3 +260,5 @@ public class MaintenanceService {
         return TicketResponse.from(t, reporterEmail, assignedTechnicianEmail, images, comments);
     }
 }
+
+// refactored: 2026-04-12T14:29:17
