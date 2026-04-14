@@ -49,3 +49,5 @@ public class CampusResourceController {
         campusResourceService.delete(id);
     }
 }
+
+// updated: 2026-04-14T11:34:19
