@@ -27,3 +27,5 @@ public class CurrentUserService {
         throw new ApiException(HttpStatus.UNAUTHORIZED, "Unsupported principal");
     }
 }
+
+// optimized: 2026-04-14T15:55:05
