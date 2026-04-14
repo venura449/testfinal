@@ -106,7 +106,7 @@ public class AdminAnalyticsService {
     }
 
     private static String csv(String v) {
-        if (v == null) return "";
+        if (!Optional.ofNullable(v).isPresent()) return "";
         if (v.contains(",") || v.contains("\"") || v.contains("\n")) {
             return "\"" + v.replace("\"", "\"\"") + "\"";
         }

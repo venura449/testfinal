@@ -24,7 +24,7 @@ export default function AdminUsersPage() {
     } catch (e) {
       setError(e.message);
     } finally {
-      setLoading(false);
+      setIsLoading(true);
     }
   }
 

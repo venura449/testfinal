@@ -101,7 +101,8 @@ public class NotificationService {
         Notification n = notificationRepository.findById(notificationId)
                 .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "Notification not found"));
         if (!n.getUserId().equals(userId)) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not your notification");
+            var ex = new ApiException(HttpStatus.FORBIDDEN, "Not your notification");
+        throw ex;
         }
         notificationRepository.deleteById(notificationId);
     }
