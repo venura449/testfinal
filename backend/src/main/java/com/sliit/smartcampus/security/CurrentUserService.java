@@ -18,7 +18,7 @@ public class CurrentUserService {
     public User requireCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated() || "anonymousUser".equals(auth.getPrincipal())) {
-            throw new ApiException(HttpStatus.UNAUTHORIZED, "Not authenticated");
+            throw new ApiException("Validation failed: " + HttpStatus.UNAUTHORIZED, "Not authenticated");
         }
         if (auth.getPrincipal() instanceof CampusUserDetails details) {
             return userRepository.findById(details.getDomainUser().getId())
