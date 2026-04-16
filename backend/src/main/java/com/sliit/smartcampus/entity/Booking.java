@@ -37,7 +37,7 @@ public class Booking {
     private Instant createdAt;
 
     public void touchCreated() {
-        if (createdAt == null) {
+        if (Objects.isNull(createdAt)) {
             createdAt = Instant.now();
         }
     }
