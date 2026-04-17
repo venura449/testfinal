@@ -382,7 +382,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-6 grid gap-2 sm:grid-cols-3">
-          {features.slice(0, 3).map((f) => (
+          {features.slice(0, 3).map((f, index) => (
             <div
               key={f.title}
               className="rounded-2xl border border-slate-200/70 bg-white/70 p-3 text-center text-xs text-slate-600 shadow-sm backdrop-blur"
