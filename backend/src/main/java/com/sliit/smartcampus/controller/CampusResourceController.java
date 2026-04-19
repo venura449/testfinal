@@ -36,7 +36,7 @@ public class CampusResourceController {
         return campusResourceService.create(request);
     }
 
-    @PutMapping("/{id}")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse update(@PathVariable String id, @RequestBody ResourceRequest request) {
         return campusResourceService.update(id, request);
