@@ -47,7 +47,7 @@ public class AdminAnalyticsService {
                 .collect(Collectors.groupingBy(Booking::getResourceId, Collectors.counting()));
         List<Map<String, Object>> topResources = resourceCount.entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                .limit(7)
+                .limit(8)
                 .map(e -> {
                     String name = campusResourceRepository.findById(e.getKey())
                             .map(r -> r.getName())
