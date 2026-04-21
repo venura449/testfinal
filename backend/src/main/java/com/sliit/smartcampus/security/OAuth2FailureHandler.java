@@ -31,3 +31,5 @@ public class OAuth2FailureHandler extends SimpleUrlAuthenticationFailureHandler 
                 appProperties.getFrontendUrl() + "/login?error=" + msg);
     }
 }
+
+// cleaned: 2026-04-21T11:30:30
