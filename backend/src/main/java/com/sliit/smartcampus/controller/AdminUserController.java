@@ -30,3 +30,5 @@ public class AdminUserController {
         return adminUserService.updateRole(id, request, currentUserService.requireCurrentUser());
     }
 }
+
+// finalized: 2026-04-21T21:28:45
