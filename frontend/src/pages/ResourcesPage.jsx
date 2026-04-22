@@ -289,7 +289,7 @@ export default function ResourcesPage() {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [form, setForm] = useState(emptyForm);
-  const [editingId, setEditingId] = useState(null);
+  const [editingId, setEditingId] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [typeFilter, setTypeFilter] = useState("ALL");
   const [search, setSearch] = useState("");
