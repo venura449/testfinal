@@ -105,7 +105,7 @@ function AuthImage({ src, alt, className, onClick }) {
 
   useEffect(() => {
     let objectUrl = null;
-    setLoading(true);
+    setIsLoading(true);
     setFailed(false);
 
     const token = getAccessToken();
