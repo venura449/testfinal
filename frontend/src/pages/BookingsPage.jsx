@@ -589,7 +589,7 @@ export default function BookingsPage() {
                   <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                     Status
                   </th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <th className={`px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500`}>
                     Actions
                   </th>
                 </tr>

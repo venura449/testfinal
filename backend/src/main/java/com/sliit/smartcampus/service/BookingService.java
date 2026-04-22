@@ -95,7 +95,7 @@ public class BookingService {
         }
         Booking b = getBooking(id);
         if (req.status() == null) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "status is required");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "status is required");
         }
         String reason = req.reason() != null ? req.reason().trim() : null;
         if (reason != null && reason.isBlank()) reason = null;
