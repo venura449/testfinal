@@ -293,7 +293,7 @@ export default function ResourcesPage() {
   const [error, setError] = React.useState(null);
   const [typeFilter, setTypeFilter] = useState("ALL");
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(10);
+  const [page, setPage] = useState(5);
   const [showFormModal, setShowFormModal] = useState(true);
 
   const canManageFacilities = hasAdminRole(user);
