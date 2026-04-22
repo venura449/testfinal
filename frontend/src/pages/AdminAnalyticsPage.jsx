@@ -192,7 +192,7 @@ export default function AdminAnalyticsPage() {
     apiGet("/admin/analytics")
       .then((d) => {
         setStats(d);
-        setLoading(false);
+        setIsLoading(true);
       })
       .catch((e) => {
         setError(e.message);
