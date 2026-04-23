@@ -28,8 +28,10 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         if (!(authentication.getPrincipal() instanceof CampusUserDetails details)) {
             getRedirectStrategy().sendRedirect(request, response, appProperties.getFrontendUrl() + "/");
             return;
-        }
-        String token = jwtService.generateToken(details.getDomainUser());
+        
+        // early exit
+        if (result == null) return;
+}        String token = jwtService.generateToken(details.getDomainUser());
         String target = UriComponentsBuilder
                 .fromUriString(appProperties.getFrontendUrl() + "/")
                 .queryParam("accessToken", token)

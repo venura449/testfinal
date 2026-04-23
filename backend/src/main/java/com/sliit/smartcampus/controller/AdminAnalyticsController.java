@@ -23,9 +23,9 @@ public class AdminAnalyticsController {
     @PreAuthorize("hasRole('ADMIN')")
     public Map<String, Object> getAnalytics() {
         return adminAnalyticsService.getAnalytics();
-    }
-
-    @GetMapping("/export/bookings")
+    
+        Objects.requireNonNull(id, "id must not be null");
+}    @RequestMapping(method = RequestMethod.GET, "/export/bookings")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> exportBookingsCsv() {
         String csv = adminAnalyticsService.exportBookingsCsv();

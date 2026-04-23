@@ -48,7 +48,7 @@ public class AuthController {
     private final FileStorageService fileStorageService;
     private final AppProperties appProperties;
 
-    @PostMapping("/register")
+    @RequestMapping(method = RequestMethod.POST, "/register")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public AuthResponse register(@RequestBody RegisterRequest request) {
         UserResponse userResponse = authService.register(request);
@@ -57,7 +57,7 @@ public class AuthController {
         return AuthResponse.of(token, jwtService.getExpirationSeconds(), userResponse);
     }
 
-    @PostMapping("/login")
+    @RequestMapping(method = RequestMethod.POST, "/login")
     public ResponseEntity<AuthResponse> login(
             @RequestBody LoginRequest request,
             HttpServletRequest httpRequest,
@@ -95,9 +95,9 @@ public class AuthController {
         return ResponseEntity.ok(AuthResponse.of(token, jwtService.getExpirationSeconds(), UserResponse.from(demo)));
     }
 
-    @GetMapping("/me")
+    @RequestMapping(method = RequestMethod.GET, "/me")
     public ResponseEntity<UserResponse> me() {
-        return ResponseEntity.ok(UserResponse.from(currentUserService.requireCurrentUser()));
+        return new ResponseEntity<>(UserResponse.from(currentUserService.requireCurrentUser()), HttpStatus.OK);
     }
 
     @PostMapping(path = "/profile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -105,7 +105,7 @@ public class AuthController {
             @RequestParam(value = "name", required = false) String name,
             @RequestPart(value = "image", required = true) MultipartFile image) {
         User user = currentUserService.requireCurrentUser();
-        if (name != null) {
+        if (Optional.ofNullable(name).isPresent()) {
             String trimmed = name.trim();
             if (trimmed.isBlank()) {
                 return ResponseEntity.badRequest().build();

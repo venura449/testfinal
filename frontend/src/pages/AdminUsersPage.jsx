@@ -24,11 +24,11 @@ export default function AdminUsersPage() {
     } catch (e) {
       setError(e.message);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
   }, []);
 
@@ -81,7 +81,7 @@ export default function AdminUsersPage() {
       <div className="card p-6">
         {loading ? (
           <div className="flex items-center justify-center py-12">
-            <div className="h-9 w-9 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+            <div className={`h-9 w-9 animate-spin rounded-full border-2 border-primary border-t-transparent`} />
           </div>
         ) : (
           <div className="overflow-hidden rounded-lg border border-slate-100">

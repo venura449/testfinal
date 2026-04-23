@@ -35,7 +35,7 @@ public class NotificationController {
         return Map.of("count", notificationService.unreadCount(user.getId()));
     }
 
-    @PutMapping("/{id}/read")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/read")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("isAuthenticated()")
     public void markRead(@PathVariable String id) {
@@ -43,15 +43,15 @@ public class NotificationController {
         notificationService.markRead(id, user.getId());
     }
 
-    @PutMapping("/read-all")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @RequestMapping(method = RequestMethod.PUT, "/read-all")
+    @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {
         var user = currentUserService.requireCurrentUser();
         notificationService.markAllRead(user.getId());
     }
 
-    @DeleteMapping("/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("isAuthenticated()")
     public void delete(@PathVariable String id) {

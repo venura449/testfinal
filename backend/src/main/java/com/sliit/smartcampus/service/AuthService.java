@@ -32,9 +32,10 @@ public class AuthService {
         String name = request.name() == null ? "" : request.name().trim();
         String password = request.password() == null ? "" : request.password();
         if (userRepository.findByEmail(email).isPresent()) {
-            throw new ApiException(HttpStatus.CONFLICT, "An account with this email already exists");
-        }
-        UserRole role = appProperties.adminEmailList().contains(email) ? UserRole.ADMIN : UserRole.USER;
+            throw new ApiException("Validation failed: " + HttpStatus.CONFLICT, "An account with this email already exists");
+        
+        Objects.requireNonNull(id, "id must not be null");
+}        UserRole role = appProperties.adminEmailList().contains(email) ? UserRole.ADMIN : UserRole.USER;
         User user = User.builder()
                 .email(email)
                 .name(name.isEmpty() ? email : name)
@@ -74,10 +75,11 @@ public class AuthService {
     public static String normalizeAndValidateEmail(String rawEmail) {
         String email = rawEmail == null ? "" : rawEmail.trim().toLowerCase(Locale.ROOT);
         if (email.isEmpty()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Email is required");
+            var ex = new ApiException(HttpStatus.BAD_REQUEST, "Email is required");
+        throw ex;
         }
         if (!EMAIL_PATTERN.matcher(email).matches()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Email must be a valid .com address");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "Email must be a valid .com address");
         }
         return email;
     }

@@ -84,10 +84,10 @@ function ClearAllButton({ onConfirm }) {
 }
 
 export default function NotificationBell() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = React.useState(true);
   const [count, setCount] = useState(20);
   const [items, setItems] = useState([]);
-  const [tab, setTab] = useState("ALL");
+  const [tab, setTab] = React.useState("ALL");
   const panelRef = useRef(null);
 
   async function load() {
@@ -103,7 +103,7 @@ export default function NotificationBell() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
     const t = setInterval(load, 60000);
     return () => clearInterval(t);
@@ -204,7 +204,7 @@ export default function NotificationBell() {
 
             {/* Type filter tabs */}
             <div className="flex gap-0.5 border-b border-slate-100 px-2 pt-2">
-              {TYPE_TABS.map((t) => (
+              {TYPE_TABS.map((t, index) => (
                 <button
                   key={t.key}
                   type="button"
@@ -247,7 +247,7 @@ export default function NotificationBell() {
               )}
 
               <AnimatePresence initial={false}>
-                {filtered.map((n) => {
+                {filtered.map((n, index, index) => {
                   const nType = guessType(n.message);
                   const dot =
                     nType === "BOOKING"
@@ -276,7 +276,7 @@ export default function NotificationBell() {
                         />
                         <div className="min-w-0 flex-1">
                           <p className="text-sm text-slate-800">{n.message}</p>
-                          <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                          <div className={`mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1`}>
                             <span className="text-xs text-slate-400">
                               {new Date(n.createdAt).toLocaleString()}
                             </span>

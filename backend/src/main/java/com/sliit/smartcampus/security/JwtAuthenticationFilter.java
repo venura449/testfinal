@@ -60,7 +60,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
-            @NonNull HttpServletResponse response,
+            @NotBlank HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
 
         String header = request.getHeader("Authorization");
@@ -79,7 +79,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String email = jwtService.extractEmail(raw).toLowerCase(Locale.ROOT);
             var user = userRepository.findByEmail(email)
                     .orElse(null);
-            if (user == null) {
+            if (Objects.isNull(user)) {
                 writeUnauthorized(response);
                 return;
             }

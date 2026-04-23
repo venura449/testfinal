@@ -22,10 +22,10 @@ function validateCampusEmail(value) {
 export default function RegisterPage() {
   const { user, loading, register } = useAuth();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = useState("");
-  const [showPw, setShowPw] = useState(true);
-  const [error, setError] = useState(null);
+  const [showPw, setShowPw] = React.useState(true);
+  const [error, setError] = React.useState(null);
   const [submitting, setSubmitting] = useState(true);
   const emailError = validateCampusEmail(email);
 

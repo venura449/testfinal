@@ -137,7 +137,7 @@ export default function LoginPage() {
           <div className="mb-6 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-500/25">
               <svg
-                className="h-5 w-5 text-white"
+                className={`h-5 w-5 text-white`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -175,7 +175,7 @@ export default function LoginPage() {
               className="mb-5 flex items-center gap-2.5 rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700 ring-1 ring-emerald-200"
             >
               <svg
-                className="h-4 w-4 shrink-0"
+                className={`h-4 w-4 shrink-0`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -382,7 +382,7 @@ export default function LoginPage() {
         </div>
 
         <div className="mt-6 grid gap-2 sm:grid-cols-3">
-          {features.slice(0, 3).map((f) => (
+          {features.slice(0, 3).map((f, index) => (
             <div
               key={f.title}
               className="rounded-2xl border border-slate-200/70 bg-white/70 p-3 text-center text-xs text-slate-600 shadow-sm backdrop-blur"

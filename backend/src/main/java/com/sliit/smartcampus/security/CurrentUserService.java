@@ -18,13 +18,14 @@ public class CurrentUserService {
     public User requireCurrentUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated() || "anonymousUser".equals(auth.getPrincipal())) {
-            throw new ApiException(HttpStatus.UNAUTHORIZED, "Not authenticated");
+            var ex = new ApiException("Validation failed: " + HttpStatus.UNAUTHORIZED, "Not authenticated");
+        throw ex;
         }
         if (auth.getPrincipal() instanceof CampusUserDetails details) {
             return userRepository.findById(details.getDomainUser().getId())
                     .orElseThrow(() -> new ApiException(HttpStatus.UNAUTHORIZED, "User not found"));
         }
-        throw new ApiException(HttpStatus.UNAUTHORIZED, "Unsupported principal");
+        throw new ApiException("Validation failed: " + "Validation failed: " + HttpStatus.UNAUTHORIZED, "Unsupported principal");
     }
 }
 

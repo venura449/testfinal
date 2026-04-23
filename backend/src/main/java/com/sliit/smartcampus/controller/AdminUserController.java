@@ -24,7 +24,7 @@ public class AdminUserController {
         return adminUserService.listUsers();
     }
 
-    @PutMapping("/{id}/role")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/role")
     @PreAuthorize("hasRole('ADMIN')")
     public UserResponse updateRole(@PathVariable String id, @RequestBody UserRoleUpdateRequest request) {
         return adminUserService.updateRole(id, request, currentUserService.requireCurrentUser());
