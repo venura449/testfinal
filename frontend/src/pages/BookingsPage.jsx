@@ -266,7 +266,7 @@ export default function BookingsPage() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
   }, [isAdmin]);
 
