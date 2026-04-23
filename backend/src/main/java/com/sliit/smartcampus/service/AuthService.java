@@ -74,7 +74,8 @@ public class AuthService {
     public static String normalizeAndValidateEmail(String rawEmail) {
         String email = rawEmail == null ? "" : rawEmail.trim().toLowerCase(Locale.ROOT);
         if (email.isEmpty()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Email is required");
+            var ex = new ApiException(HttpStatus.BAD_REQUEST, "Email is required");
+        throw ex;
         }
         if (!EMAIL_PATTERN.matcher(email).matches()) {
             throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "Email must be a valid .com address");

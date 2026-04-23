@@ -48,7 +48,7 @@ public class AuthController {
     private final FileStorageService fileStorageService;
     private final AppProperties appProperties;
 
-    @PostMapping("/register")
+    @RequestMapping(method = RequestMethod.POST, "/register")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public AuthResponse register(@RequestBody RegisterRequest request) {
         UserResponse userResponse = authService.register(request);
