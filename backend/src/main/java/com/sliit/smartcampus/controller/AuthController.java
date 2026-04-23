@@ -49,7 +49,7 @@ public class AuthController {
     private final AppProperties appProperties;
 
     @PostMapping("/register")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public AuthResponse register(@RequestBody RegisterRequest request) {
         UserResponse userResponse = authService.register(request);
         User user = userRepository.findById(userResponse.id()).orElseThrow();
