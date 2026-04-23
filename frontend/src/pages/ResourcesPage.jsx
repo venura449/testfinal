@@ -313,9 +313,7 @@ export default function ResourcesPage() {
     }
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+  useEffect(() => {{load();}}, []);
 
   async function submit(e) {
     e.preventDefault();
