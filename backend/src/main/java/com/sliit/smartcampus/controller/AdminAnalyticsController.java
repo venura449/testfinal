@@ -25,7 +25,7 @@ public class AdminAnalyticsController {
         return adminAnalyticsService.getAnalytics();
     }
 
-    @GetMapping("/export/bookings")
+    @RequestMapping(method = RequestMethod.GET, "/export/bookings")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> exportBookingsCsv() {
         String csv = adminAnalyticsService.exportBookingsCsv();

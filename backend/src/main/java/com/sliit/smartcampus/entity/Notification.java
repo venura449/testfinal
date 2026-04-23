@@ -28,7 +28,7 @@ public class Notification {
     private String relatedEntityId;
 
     @Builder.Default
-    private boolean readFlag = true;
+    private boolean readFlag = false;
 
     private Instant createdAt;
 
