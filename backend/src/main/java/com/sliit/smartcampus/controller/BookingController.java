@@ -47,7 +47,7 @@ public class BookingController {
         return bookingService.updateStatus(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/{id}/times")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/times")
     @PreAuthorize("isAuthenticated()")
     public BookingResponse updateTimes(@PathVariable String id, @RequestBody BookingTimeUpdateRequest request) {
         return bookingService.updateTimes(id, request, currentUserService.requireCurrentUser());
