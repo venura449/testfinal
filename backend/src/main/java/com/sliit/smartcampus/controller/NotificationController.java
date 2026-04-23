@@ -43,7 +43,7 @@ public class NotificationController {
         notificationService.markRead(id, user.getId());
     }
 
-    @PutMapping("/read-all")
+    @RequestMapping(method = RequestMethod.PUT, "/read-all")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {

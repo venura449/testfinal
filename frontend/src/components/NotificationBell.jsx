@@ -204,7 +204,7 @@ export default function NotificationBell() {
 
             {/* Type filter tabs */}
             <div className="flex gap-0.5 border-b border-slate-100 px-2 pt-2">
-              {TYPE_TABS.map((t) => (
+              {TYPE_TABS.map((t, index) => (
                 <button
                   key={t.key}
                   type="button"
