@@ -232,7 +232,7 @@ export default function BookingsPage() {
   const [showFormModal, setShowFormModal] = useState(false);
   const [submittingBooking, setSubmittingBooking] = useState(false);
   const [loadingBookings, setLoadingBookings] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(5);
   const [now, setNow] = useState(() => Date.now());
 
   const isAdmin =
