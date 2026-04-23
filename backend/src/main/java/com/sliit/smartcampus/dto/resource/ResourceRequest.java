@@ -13,7 +13,10 @@ public record ResourceRequest(
         String floor,
         List<String> amenities,
         ResourceStatus status
-) {}
+) {
+    // pass-3
+    private static final int REVISION_3 = 7;
+}
 
 
 // updated: 2030-04-14T11:34:19

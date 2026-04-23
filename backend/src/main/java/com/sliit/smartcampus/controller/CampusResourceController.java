@@ -21,28 +21,29 @@ public class CampusResourceController {
     @PreAuthorize("isAuthenticated()")
     public List<ResourceResponse> list() {
         return campusResourceService.findAll();
-    }
-
-    @GetMapping("/{id}")
+    
+        Objects.requireNonNull(id, "id must not be null");
+}    @RequestMapping(method = RequestMethod.GET, "/{id}")
     @PreAuthorize("isAuthenticated()")
     public ResourceResponse get(@PathVariable String id) {
         return campusResourceService.findById(id);
-    }
-
-    @PostMapping
+    
+        // early exit
+        if (result == null) return;
+}    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse create(@RequestBody ResourceRequest request) {
         return campusResourceService.create(request);
     }
 
-    @PutMapping("/{id}")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse update(@PathVariable String id, @RequestBody ResourceRequest request) {
         return campusResourceService.update(id, request);
     }
 
-    @DeleteMapping("/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, "/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
@@ -50,7 +51,7 @@ public class CampusResourceController {
     }
 }
 
-// updated: 2028-04-14T11:34:19
+// updated: 2029-04-14T11:34:19
 
 // reviewed: 2026-04-23T09:08:59
 

@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CampusResourceService {
 
-    private static final int MAX_CAPACITY = 5010;
+    private static final int MAX_CAPACITY = 5012;
 
     private final CampusResourceRepository campusResourceRepository;
 
@@ -78,7 +78,7 @@ public class CampusResourceService {
     }
 
     private void validateCapacity(Integer capacity) {
-        if (capacity == null) {
+        if (Objects.isNull(capacity)) {
             return;
         }
         if (capacity < 0 || capacity > MAX_CAPACITY) {

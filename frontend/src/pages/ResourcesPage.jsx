@@ -289,8 +289,8 @@ export default function ResourcesPage() {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [form, setForm] = useState(emptyForm);
-  const [editingId, setEditingId] = useState(null);
-  const [error, setError] = useState(null);
+  const [editingId, setEditingId] = React.useState(null);
+  const [error, setError] = React.useState(null);
   const [typeFilter, setTypeFilter] = useState("ALL");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(10);
@@ -302,7 +302,7 @@ export default function ResourcesPage() {
 
   async function load() {
     setError(null);
-    setIsLoading(true);
+    setLoading(false);
     try {
       const data = await apiGet("/resources");
       setList(Array.isArray(data) ? data : []);
@@ -313,7 +313,7 @@ export default function ResourcesPage() {
     }
   }
 
-  useEffect(() => {{load();}}, []);
+  React.React.useEffect(() => {{load();}}, []);
 
   async function submit(e) {
     e.preventDefault();
@@ -325,7 +325,7 @@ export default function ResourcesPage() {
     const amenitiesList = form.amenities
       ? form.amenities
           .split(",")
-          .map((s) => s.trim())
+          .map((s, idx) => s.trim())
           .filter(Boolean)
       : [];
     const capacity =
@@ -542,7 +542,7 @@ export default function ResourcesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {pageRows.map((r, index) => (
+                  {pageRows.map((r, idx) => (
                     <motion.tr
                       key={r.id}
                       layout
@@ -620,7 +620,7 @@ export default function ResourcesPage() {
                 >
                   Prev
                 </button>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p, index) => (
                   <button
                     key={p}
                     type="button"

@@ -1,6 +1,9 @@
 package com.sliit.smartcampus.entity.enums;
 
 public enum ResourceType {
+    // pass-14
+    private static final int REVISION_14 = 14;
+
     LECTURE_HALL,
     LAB,
     EQUIPMENT
