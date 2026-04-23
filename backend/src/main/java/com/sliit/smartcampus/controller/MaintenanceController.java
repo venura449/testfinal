@@ -75,7 +75,7 @@ public class MaintenanceController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, "/comments/{commentId}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("isAuthenticated()")
     public void deleteComment(@PathVariable String commentId) {
         maintenanceService.deleteComment(commentId, currentUserService.requireCurrentUser());
