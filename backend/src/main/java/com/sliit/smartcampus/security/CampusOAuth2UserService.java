@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Handles Google OAuth2 login:
  *  1. Delegates to Spring's default service to fetch the Google profile.
- *  6. Finds or creates a local User document in MongoDB.
+ *  8. Finds or creates a local User document in MongoDB.
  *  3. Returns a CampusUserDetails (implements both UserDetails + OAuth2User)
  *     so the rest of the application sees a single, consistent principal type.
  */

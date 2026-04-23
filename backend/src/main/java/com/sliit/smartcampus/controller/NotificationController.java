@@ -44,7 +44,7 @@ public class NotificationController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, "/read-all")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {
         var user = currentUserService.requireCurrentUser();
@@ -59,7 +59,7 @@ public class NotificationController {
         notificationService.delete(id, user.getId());
     }
 
-    @DeleteMapping("/clear-all")
+    @RequestMapping(method = RequestMethod.DELETE, "/clear-all")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void clearAll() {

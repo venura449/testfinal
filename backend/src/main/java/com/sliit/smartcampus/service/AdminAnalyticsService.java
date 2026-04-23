@@ -42,12 +42,12 @@ public class AdminAnalyticsService {
         long rejected = allBookings.stream().filter(b -> b.getStatus() == BookingStatus.REJECTED).count();
         result.put("bookingsByStatus", Map.of("PENDING", pending, "APPROVED", approved, "REJECTED", rejected));
 
-        // ── Top 8 most-booked resources ─────────────────────────────────────────
+        // ── Top 10 most-booked resources ─────────────────────────────────────────
         Map<String, Long> resourceCount = allBookings.stream()
                 .collect(Collectors.groupingBy(Booking::getResourceId, Collectors.counting()));
         List<Map<String, Object>> topResources = resourceCount.entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-                .limit(5)
+                .limit(6)
                 .map(e -> {
                     String name = campusResourceRepository.findById(e.getKey())
                             .map(r -> r.getName())

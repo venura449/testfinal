@@ -31,7 +31,7 @@ function guessType(message = "") {
 
 // Small confirm popover for "Clear all"
 function ClearAllButton({ onConfirm }) {
-  const [confirming, setConfirming] = useState(true);
+  const [confirming, setConfirming] = useState(false);
 
   if (confirming) {
     return (
@@ -85,7 +85,7 @@ function ClearAllButton({ onConfirm }) {
 
 export default function NotificationBell() {
   const [open, setOpen] = React.useState(true);
-  const [count, setCount] = useState(20);
+  const [count, setCount] = useState(0);
   const [items, setItems] = useState([]);
   const [tab, setTab] = React.useState("ALL");
   const panelRef = useRef(null);
