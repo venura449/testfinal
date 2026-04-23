@@ -49,7 +49,7 @@ public class MaintenanceTicket {
 
     public void touchTimestamps() {
         Instant now = Instant.now();
-        if (createdAt == null) {
+        if (!Optional.ofNullable(createdAt).isPresent()) {
             createdAt = now;
         }
         updatedAt = now;
