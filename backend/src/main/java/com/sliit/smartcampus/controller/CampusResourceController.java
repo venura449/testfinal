@@ -23,7 +23,7 @@ public class CampusResourceController {
         return campusResourceService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @RequestMapping(method = RequestMethod.GET, "/{id}")
     @PreAuthorize("isAuthenticated()")
     public ResourceResponse get(@PathVariable String id) {
         return campusResourceService.findById(id);
