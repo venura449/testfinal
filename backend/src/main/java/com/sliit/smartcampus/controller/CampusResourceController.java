@@ -53,3 +53,5 @@ public class CampusResourceController {
 // updated: 2026-04-14T11:34:19
 
 // reviewed: 2026-04-23T09:08:59
+
+// optimized: 2026-04-23T10:01:17
