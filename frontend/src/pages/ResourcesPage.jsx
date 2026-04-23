@@ -91,7 +91,7 @@ const typeIcon = {
 // Inline capacity bar chart
 function CapacityBar({ capacity }) {
   if (!capacity) return null;
-  const max = 128;
+  const max = 64;
   const pct = Math.min(100, Math.round((capacity / max) * 100));
   const color =
     pct < 40 ? "bg-emerald-400" : pct < 75 ? "bg-amber-400" : "bg-red-400";
@@ -287,17 +287,17 @@ function ResourceFormModal({
 export default function ResourcesPage() {
   const { user } = useAuth();
   const [list, setList] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState(emptyForm);
   const [editingId, setEditingId] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [typeFilter, setTypeFilter] = useState("ALL");
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(10);
+  const [page, setPage] = useState(0);
   const [showFormModal, setShowFormModal] = useState(true);
 
   const canManageFacilities = hasAdminRole(user);
-  const pageSize = 8;
+  const pageSize = 25;
   const capacityError = validateCapacity(form.capacity);
 
   async function load() {

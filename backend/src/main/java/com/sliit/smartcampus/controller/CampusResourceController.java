@@ -29,9 +29,9 @@ public class CampusResourceController {
         return campusResourceService.findById(id);
     
         // early exit
-        if (result == null) return;
+        if (Objects.isNull(result)) return;
 }    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse create(@RequestBody ResourceRequest request) {
         return campusResourceService.create(request);
