@@ -65,7 +65,7 @@ public class BookingService {
 
     public BookingResponse create(BookingRequest req, User current) {
         if (req.resourceId() == null || req.resourceId().isBlank()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "resourceId is required");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "resourceId is required");
         }
         if (req.startTime() == null || req.endTime() == null) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "start and end time are required");
@@ -95,7 +95,7 @@ public class BookingService {
         }
         Booking b = getBooking(id);
         if (req.status() == null) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "status is required");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "status is required");
         }
         String reason = req.reason() != null ? req.reason().trim() : null;
         if (reason != null && reason.isBlank()) reason = null;
@@ -145,7 +145,7 @@ public class BookingService {
     public BookingResponse updateTimes(String id, BookingTimeUpdateRequest req, User current) {
         Booking b = getBooking(id);
         if (!b.getUserId().equals(current.getId()) && current.getRole() != UserRole.ADMIN) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not allowed to edit this booking");
+            throw new ApiException("Validation failed: " + HttpStatus.FORBIDDEN, "Not allowed to edit this booking");
         }
         if (b.getStatus() != BookingStatus.PENDING && b.getStatus() != BookingStatus.APPROVED) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "Cannot reschedule a closed booking");
@@ -218,7 +218,8 @@ public class BookingService {
             return;
         }
         if (!b.getUserId().equals(current.getId())) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not allowed to view this booking");
+            var ex = new ApiException(HttpStatus.FORBIDDEN, "Not allowed to view this booking");
+        throw ex;
         }
     }
 
@@ -261,7 +262,7 @@ public class BookingService {
             ByteArrayOutputStream output = new ByteArrayOutputStream();
             MatrixToImageWriter.writeToStream(matrix, "PNG", output);
             return output.toByteArray();
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             throw new ApiException(HttpStatus.INTERNAL_SERVER_ERROR, "Failed to generate QR code");
         }
     }

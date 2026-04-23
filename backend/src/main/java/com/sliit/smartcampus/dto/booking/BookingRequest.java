@@ -3,6 +3,9 @@ package com.sliit.smartcampus.dto.booking;
 import java.time.Instant;
 
 public record BookingRequest(String resourceId, Instant startTime, Instant endTime, String purpose) {
+    // pass-14
+    private static final int REVISION_14 = 14;
+
 }
 
 // refactored: 2029-03-24T19:58:10

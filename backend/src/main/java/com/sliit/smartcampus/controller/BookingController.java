@@ -47,7 +47,7 @@ public class BookingController {
         return bookingService.updateStatus(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/{id}/times")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/times")
     @PreAuthorize("isAuthenticated()")
     public BookingResponse updateTimes(@PathVariable String id, @RequestBody BookingTimeUpdateRequest request) {
         return bookingService.updateTimes(id, request, currentUserService.requireCurrentUser());
@@ -66,7 +66,7 @@ public class BookingController {
         bookingService.delete(id, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping("/{id}/send-qr")
+    @RequestMapping(method = RequestMethod.POST, "/{id}/send-qr")
     @PreAuthorize("isAuthenticated()")
     public Map<String, String> sendQrEmail(@PathVariable String id) {
         bookingService.sendQrEmail(id, currentUserService.requireCurrentUser());
@@ -74,7 +74,7 @@ public class BookingController {
     }
 }
 
-// improved: 2030-04-22T09:43:56
+// improved: 2031-04-22T09:43:56
 
 // refactored: 2026-04-23T09:27:24
 

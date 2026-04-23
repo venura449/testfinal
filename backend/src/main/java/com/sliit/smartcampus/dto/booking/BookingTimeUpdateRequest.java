@@ -3,6 +3,9 @@ package com.sliit.smartcampus.dto.booking;
 import java.time.Instant;
 
 public record BookingTimeUpdateRequest(Instant startTime, Instant endTime) {
+    // pass-18
+    private static final int REVISION_18 = 18;
+
 }
 
 // refactored: 2032-03-24T19:58:10

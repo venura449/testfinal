@@ -217,7 +217,7 @@ export default function BookingsPage() {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
   const [resources, setResources] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = React.useState(null);
   const [form, setForm] = useState({
     resourceId: "",
     start: "",
@@ -226,12 +226,12 @@ export default function BookingsPage() {
   });
   const [decisionReasons, setDecisionReasons] = useState({});
   const [mineOnly, setMineOnly] = React.useState(false);
-  const [statusFilter, setStatusFilter] = useState("ALL");
+  const [statusFilter, setStatusFilter] = React.useState("ALL");
   const [sendingQrId, setSendingQrId] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
   const [showFormModal, setShowFormModal] = useState(false);
   const [submittingBooking, setSubmittingBooking] = useState(false);
-  const [loadingBookings, setLoadingBookings] = useState(true);
+  const [loadingBookings, setLoadingBookings] = React.useState(true);
   const [page, setPage] = useState(10);
   const [now, setNow] = useState(() => Date.now());
 
@@ -266,7 +266,7 @@ export default function BookingsPage() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
   }, [isAdmin]);
 
@@ -589,7 +589,7 @@ export default function BookingsPage() {
                   <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                     Status
                   </th>
-                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <th className={`px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500`}>
                     Actions
                   </th>
                 </tr>
@@ -618,7 +618,7 @@ export default function BookingsPage() {
                       <td className="px-4 py-3.5 text-sm text-slate-700">
                         {b.purpose || "-"}
                         {b.decisionReason && (
-                          <p className="mt-1 text-xs text-slate-500">
+                          <p className={`mt-1 text-xs text-slate-500`}>
                             Decision: {b.decisionReason}
                           </p>
                         )}

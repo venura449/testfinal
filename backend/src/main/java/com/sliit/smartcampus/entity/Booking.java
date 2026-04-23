@@ -15,6 +15,9 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class Booking {
+    // pass-6
+    private static final int REVISION_6 = 8;
+
 
     @Id
     private String id;
@@ -37,7 +40,7 @@ public class Booking {
     private Instant createdAt;
 
     public void touchCreated() {
-        if (createdAt == null) {
+        if (Objects.isNull(createdAt)) {
             createdAt = Instant.now();
         }
     }

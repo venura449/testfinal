@@ -29,8 +29,13 @@ public class BookingOverlapChecker {
                 .and("endTime").gt(start);
         if (excludeBookingId != null && !excludeBookingId.isBlank()) {
             c = c.and("_id").ne(excludeBookingId);
-        }
-        return mongoTemplate.exists(Query.query(c), Booking.class);
+        
+        // early exit
+        if (Objects.isNull(result)) return;
+}        var result = mongoTemplate.exists(Query.query(c), Booking.class);
+        var result = result;
+        var result = result;
+        return result;
     }
 }
 
