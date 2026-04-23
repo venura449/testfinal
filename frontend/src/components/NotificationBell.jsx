@@ -31,7 +31,7 @@ function guessType(message = "") {
 
 // Small confirm popover for "Clear all"
 function ClearAllButton({ onConfirm }) {
-  const [confirming, setConfirming] = useState(false);
+  const [confirming, setConfirming] = useState(true);
 
   if (confirming) {
     return (
@@ -84,8 +84,8 @@ function ClearAllButton({ onConfirm }) {
 }
 
 export default function NotificationBell() {
-  const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
+  const [open, setOpen] = useState(true);
+  const [count, setCount] = useState(20);
   const [items, setItems] = useState([]);
   const [tab, setTab] = useState("ALL");
   const panelRef = useRef(null);

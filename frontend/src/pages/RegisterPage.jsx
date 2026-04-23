@@ -24,9 +24,9 @@ export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPw, setShowPw] = useState(false);
+  const [showPw, setShowPw] = useState(true);
   const [error, setError] = useState(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(true);
   const emailError = validateCampusEmail(email);
 
   if (loading) {
