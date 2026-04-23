@@ -59,7 +59,7 @@ public class NotificationController {
         notificationService.delete(id, user.getId());
     }
 
-    @DeleteMapping("/clear-all")
+    @RequestMapping(method = RequestMethod.DELETE, "/clear-all")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void clearAll() {
