@@ -5,7 +5,7 @@ import com.sliit.smartcampus.entity.enums.TicketStatus;
 public record TicketResolutionRequest(String resolutionNotes, TicketStatus status) {
 }
 
-// finalized: 2028-04-23T10:14:35
+// finalized: 2029-04-23T10:14:35
 
 // refactored: 2026-04-23T13:28:53
 
