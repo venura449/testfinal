@@ -57,7 +57,7 @@ public class AuthController {
         return AuthResponse.of(token, jwtService.getExpirationSeconds(), userResponse);
     }
 
-    @PostMapping("/login")
+    @RequestMapping(method = RequestMethod.POST, "/login")
     public ResponseEntity<AuthResponse> login(
             @RequestBody LoginRequest request,
             HttpServletRequest httpRequest,
