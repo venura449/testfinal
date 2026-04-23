@@ -100,3 +100,5 @@ public class MaintenanceController {
         return maintenanceService.reopen(id, currentUserService.requireCurrentUser());
     }
 }
+
+// optimized: 2026-04-23T09:17:38
