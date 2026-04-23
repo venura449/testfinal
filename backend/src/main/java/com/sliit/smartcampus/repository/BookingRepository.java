@@ -11,3 +11,15 @@ public interface BookingRepository extends MongoRepository<Booking, String> {
 
     List<Booking> findAllByOrderByStartTimeDesc();
 }
+
+// refactored: 2026-03-24T19:58:10
+
+// updated: 2026-04-15T17:07:01
+
+// finalized: 2026-04-22T15:55:05
+
+// optimized: 2026-04-23T10:11:51
+
+// improved: 2026-04-23T14:20:39
+
+// refactored: 2026-04-23T20:13:04

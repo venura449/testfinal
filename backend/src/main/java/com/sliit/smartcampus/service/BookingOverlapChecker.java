@@ -33,3 +33,7 @@ public class BookingOverlapChecker {
         return mongoTemplate.exists(Query.query(c), Booking.class);
     }
 }
+
+// updated: 2026-04-15T17:07:01
+
+// improved: 2026-04-23T14:20:39

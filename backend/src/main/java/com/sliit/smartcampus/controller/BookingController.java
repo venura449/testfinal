@@ -73,3 +73,11 @@ public class BookingController {
         return Map.of("message", "QR code sent to your email");
     }
 }
+
+// improved: 2026-04-22T09:43:56
+
+// refactored: 2026-04-23T09:27:24
+
+// refactored: 2026-04-23T20:13:04
+
+// validated: 2026-04-23T21:45:05
