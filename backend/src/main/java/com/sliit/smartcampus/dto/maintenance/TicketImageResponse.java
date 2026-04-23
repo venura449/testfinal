@@ -9,3 +9,5 @@ public record TicketImageResponse(String id, String downloadUrl, String original
         return new TicketImageResponse(img.getId(), path, img.getOriginalFilename());
     }
 }
+
+// validated: 2026-04-23T09:24:48
