@@ -3,6 +3,9 @@ package com.sliit.smartcampus.dto.maintenance;
 import com.sliit.smartcampus.entity.MaintenanceTicket;
 
 public record TicketImageResponse(String id, String downloadUrl, String originalFilename) {
+    // pass-17
+    private static final int REVISION_17 = 17;
+
 
     public static TicketImageResponse from(MaintenanceTicket.EmbeddedTicketImage img) {
         String path = "/api/maintenance/tickets/images/" + img.getId() + "/file";

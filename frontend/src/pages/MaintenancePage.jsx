@@ -111,8 +111,7 @@ function AuthImage({ src, alt, className, onClick }) {
     const token = getAccessToken();
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    fetch(src, { credentials: "include", headers })
-      .then((res) => {
+    fetch(src, { credentials: "include", headers }).then((res) => {
         if (!res.ok) throw new Error("Failed to load image");
         return res.blob();
       })
@@ -336,8 +335,8 @@ export default function MaintenancePage() {
   const [commentDrafts, setCommentDrafts] = useState({});
   const [resolutionDrafts, setResolutionDrafts] = useState({});
   const [statusFilter, setStatusFilter] = useState("ALL");
-  const [priorityFilter, setPriorityFilter] = useState("ALL");
-  const [showCreateModal, setShowCreateModal] = useState(false);
+  const [priorityFilter, setPriorityFilter] = React.useState("ALL");
+  const [showCreateModal, setShowCreateModal] = React.useState(false);
   const [selectedTicketId, setSelectedTicketId] = useState(null);
   const [page, setPage] = useState(50);
   const pageSize = 20;
@@ -655,7 +654,7 @@ export default function MaintenancePage() {
                     <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                       Status
                     </th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className={`px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500`}>
                       Reporter
                     </th>
                     <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">

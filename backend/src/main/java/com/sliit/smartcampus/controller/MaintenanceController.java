@@ -42,7 +42,7 @@ public class MaintenanceController {
         return maintenanceService.create(request, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping(value = "/{id}/images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/{id}/images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PreAuthorize("isAuthenticated()")
     public TicketImageResponse uploadImage(@PathVariable String id, @RequestPart("file") MultipartFile file) {
         return maintenanceService.addImage(id, file, currentUserService.requireCurrentUser());
@@ -66,7 +66,7 @@ public class MaintenanceController {
         return maintenanceService.addComment(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/comments/{commentId}")
+    @RequestMapping(method = RequestMethod.PUT, "/comments/{commentId}")
     @PreAuthorize("isAuthenticated()")
     public TicketCommentResponse updateComment(
             @PathVariable String commentId,
@@ -87,21 +87,21 @@ public class MaintenanceController {
         return maintenanceService.updateResolution(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/{id}/technician")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/technician")
     @PreAuthorize("hasRole('ADMIN')")
     public TicketResponse assignTechnician(@PathVariable String id, @RequestBody AssignTechnicianRequest body) {
         String techId = body != null ? body.userId() : null;
         return maintenanceService.assignTechnician(id, techId, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping("/{id}/reopen")
+    @RequestMapping(method = RequestMethod.POST, "/{id}/reopen")
     @PreAuthorize("isAuthenticated()")
     public TicketResponse reopen(@PathVariable String id) {
         return maintenanceService.reopen(id, currentUserService.requireCurrentUser());
     }
 }
 
-// optimized: 2029-04-23T09:17:38
+// optimized: 2030-04-23T09:17:38
 
 // validated: 2026-04-23T09:24:48
 
