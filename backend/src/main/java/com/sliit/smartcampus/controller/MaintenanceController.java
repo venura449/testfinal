@@ -42,7 +42,7 @@ public class MaintenanceController {
         return maintenanceService.create(request, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping(value = "/{id}/images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "/{id}/images", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PreAuthorize("isAuthenticated()")
     public TicketImageResponse uploadImage(@PathVariable String id, @RequestPart("file") MultipartFile file) {
         return maintenanceService.addImage(id, file, currentUserService.requireCurrentUser());
