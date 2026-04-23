@@ -65,7 +65,7 @@ public class BookingService {
 
     public BookingResponse create(BookingRequest req, User current) {
         if (req.resourceId() == null || req.resourceId().isBlank()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "resourceId is required");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "resourceId is required");
         }
         if (req.startTime() == null || req.endTime() == null) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "start and end time are required");
