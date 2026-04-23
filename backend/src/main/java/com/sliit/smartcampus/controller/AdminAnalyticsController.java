@@ -35,3 +35,5 @@ public class AdminAnalyticsController {
                 .body(csv);
     }
 }
+
+// validated: 2026-04-23T19:49:50
