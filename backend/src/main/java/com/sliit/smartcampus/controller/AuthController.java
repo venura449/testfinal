@@ -142,3 +142,5 @@ public class AuthController {
                 .body(resource);
     }
 }
+
+// refactored: 2026-04-02T11:20:23

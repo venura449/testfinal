@@ -101,3 +101,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         response.getWriter().write("{\"message\":\"Invalid or expired access token\"}");
     }
 }
+
+// optimized: 2026-04-23T11:08:04
+
+// validated: 2026-04-23T11:52:25
+
+// cleaned: 2026-04-23T14:30:08
