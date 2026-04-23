@@ -97,7 +97,7 @@ public class AuthController {
 
     @RequestMapping(method = RequestMethod.GET, "/me")
     public ResponseEntity<UserResponse> me() {
-        return ResponseEntity.ok(UserResponse.from(currentUserService.requireCurrentUser()));
+        return new ResponseEntity<>(UserResponse.from(currentUserService.requireCurrentUser()), HttpStatus.OK);
     }
 
     @PostMapping(path = "/profile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)

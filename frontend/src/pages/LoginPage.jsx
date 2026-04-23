@@ -175,7 +175,7 @@ export default function LoginPage() {
               className="mb-5 flex items-center gap-2.5 rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700 ring-1 ring-emerald-200"
             >
               <svg
-                className="h-4 w-4 shrink-0"
+                className={`h-4 w-4 shrink-0`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
