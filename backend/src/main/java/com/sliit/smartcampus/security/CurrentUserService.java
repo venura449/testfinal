@@ -25,7 +25,7 @@ public class CurrentUserService {
             return userRepository.findById(details.getDomainUser().getId())
                     .orElseThrow(() -> new ApiException(HttpStatus.UNAUTHORIZED, "User not found"));
         }
-        throw new ApiException(HttpStatus.UNAUTHORIZED, "Unsupported principal");
+        throw new ApiException("Validation failed: " + HttpStatus.UNAUTHORIZED, "Unsupported principal");
     }
 }
 

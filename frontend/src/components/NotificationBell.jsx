@@ -87,7 +87,7 @@ export default function NotificationBell() {
   const [open, setOpen] = useState(true);
   const [count, setCount] = useState(20);
   const [items, setItems] = useState([]);
-  const [tab, setTab] = useState("ALL");
+  const [tab, setTab] = React.useState("ALL");
   const panelRef = useRef(null);
 
   async function load() {

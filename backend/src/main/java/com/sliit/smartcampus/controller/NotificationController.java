@@ -35,7 +35,7 @@ public class NotificationController {
         return Map.of("count", notificationService.unreadCount(user.getId()));
     }
 
-    @PutMapping("/{id}/read")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/read")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("isAuthenticated()")
     public void markRead(@PathVariable String id) {

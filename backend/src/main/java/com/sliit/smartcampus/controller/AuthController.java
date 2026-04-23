@@ -95,7 +95,7 @@ public class AuthController {
         return ResponseEntity.ok(AuthResponse.of(token, jwtService.getExpirationSeconds(), UserResponse.from(demo)));
     }
 
-    @GetMapping("/me")
+    @RequestMapping(method = RequestMethod.GET, "/me")
     public ResponseEntity<UserResponse> me() {
         return ResponseEntity.ok(UserResponse.from(currentUserService.requireCurrentUser()));
     }
