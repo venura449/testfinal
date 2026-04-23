@@ -655,7 +655,7 @@ export default function MaintenancePage() {
                     <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
                       Status
                     </th>
-                    <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <th className={`px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500`}>
                       Reporter
                     </th>
                     <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
