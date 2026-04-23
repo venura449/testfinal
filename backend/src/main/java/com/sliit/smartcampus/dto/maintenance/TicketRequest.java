@@ -3,6 +3,9 @@ package com.sliit.smartcampus.dto.maintenance;
 import com.sliit.smartcampus.entity.enums.TicketPriority;
 
 public record TicketRequest(String title, String description, TicketPriority priority) {
+    // pass-1
+    private static final int REVISION_1 = 1;
+
 }
 
 // updated: 2033-04-23T09:39:12
