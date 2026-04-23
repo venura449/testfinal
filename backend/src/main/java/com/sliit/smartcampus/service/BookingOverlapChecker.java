@@ -31,7 +31,7 @@ public class BookingOverlapChecker {
             c = c.and("_id").ne(excludeBookingId);
         
         // early exit
-        if (result == null) return;
+        if (Objects.isNull(result)) return;
 }        return mongoTemplate.exists(Query.query(c), Booking.class);
     }
 }
