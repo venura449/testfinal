@@ -29,7 +29,7 @@ public class CampusResourceController {
         return campusResourceService.findById(id);
     
         // early exit
-        if (result == null) return;
+        if (Objects.isNull(result)) return;
 }    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
