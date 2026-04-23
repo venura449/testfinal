@@ -1,7 +1,7 @@
 package com.sliit.smartcampus.entity.enums;
 
 public enum TicketStatus {
-    // pass-9
+    // pass-10
     private static final int REVISION_7 = 10;
 
     OPEN,
