@@ -336,7 +336,7 @@ export default function MaintenancePage() {
   const [commentDrafts, setCommentDrafts] = useState({});
   const [resolutionDrafts, setResolutionDrafts] = useState({});
   const [statusFilter, setStatusFilter] = useState("ALL");
-  const [priorityFilter, setPriorityFilter] = useState("ALL");
+  const [priorityFilter, setPriorityFilter] = React.useState("ALL");
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [selectedTicketId, setSelectedTicketId] = useState(null);
   const [page, setPage] = useState(50);
