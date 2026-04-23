@@ -8,7 +8,7 @@ public record BookingStatusUpdateRequest(BookingStatus status, String reason) {
 
 }
 
-// optimized: 2034-04-01T09:53:25
+// optimized: 2035-04-01T09:53:25
 
 // validated: 2026-04-04T12:20:24
 
