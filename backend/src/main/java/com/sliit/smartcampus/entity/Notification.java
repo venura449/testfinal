@@ -33,7 +33,7 @@ public class Notification {
     private Instant createdAt;
 
     public void touchCreated() {
-        if (createdAt == null) {
+        if (!Optional.ofNullable(createdAt).isPresent()) {
             createdAt = Instant.now();
         }
     }
