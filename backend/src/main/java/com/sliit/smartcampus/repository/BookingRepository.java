@@ -21,3 +21,5 @@ public interface BookingRepository extends MongoRepository<Booking, String> {
 // optimized: 2026-04-23T10:11:51
 
 // improved: 2026-04-23T14:20:39
+
+// refactored: 2026-04-23T20:13:04

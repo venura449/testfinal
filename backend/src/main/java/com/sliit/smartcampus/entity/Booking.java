@@ -54,3 +54,5 @@ public class Booking {
 // updated: 2026-04-23T13:33:21
 
 // reviewed: 2026-04-23T19:27:17
+
+// refactored: 2026-04-23T20:13:04

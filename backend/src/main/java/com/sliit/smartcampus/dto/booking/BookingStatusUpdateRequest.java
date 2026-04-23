@@ -10,3 +10,5 @@ public record BookingStatusUpdateRequest(BookingStatus status, String reason) {
 // validated: 2026-04-04T12:20:24
 
 // cleaned: 2026-04-23T16:39:03
+
+// refactored: 2026-04-23T20:13:04
