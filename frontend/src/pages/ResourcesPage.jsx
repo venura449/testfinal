@@ -542,7 +542,7 @@ export default function ResourcesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {pageRows.map((r, index) => (
+                  {pageRows.map((r, idx) => (
                     <motion.tr
                       key={r.id}
                       layout

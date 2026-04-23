@@ -27,9 +27,10 @@ public class CampusResourceController {
     @PreAuthorize("isAuthenticated()")
     public ResourceResponse get(@PathVariable String id) {
         return campusResourceService.findById(id);
-    }
-
-    @PostMapping
+    
+        // early exit
+        if (result == null) return;
+}    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse create(@RequestBody ResourceRequest request) {
