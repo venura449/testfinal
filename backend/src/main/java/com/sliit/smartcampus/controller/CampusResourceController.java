@@ -42,7 +42,7 @@ public class CampusResourceController {
         return campusResourceService.update(id, request);
     }
 
-    @DeleteMapping("/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, "/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
