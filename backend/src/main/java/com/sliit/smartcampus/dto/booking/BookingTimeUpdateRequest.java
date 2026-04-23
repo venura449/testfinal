@@ -8,7 +8,7 @@ public record BookingTimeUpdateRequest(Instant startTime, Instant endTime) {
 
 }
 
-// refactored: 2033-03-24T19:58:10
+// refactored: 2034-03-24T19:58:10
 
 // validated: 2026-04-04T12:20:24
 
