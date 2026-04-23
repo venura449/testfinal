@@ -36,7 +36,7 @@ public class MaintenanceController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("isAuthenticated()")
     public TicketResponse create(@RequestBody TicketRequest request) {
         return maintenanceService.create(request, currentUserService.requireCurrentUser());
@@ -60,7 +60,7 @@ public class MaintenanceController {
     }
 
     @PostMapping("/{id}/comments")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("isAuthenticated()")
     public TicketCommentResponse addComment(@PathVariable String id, @RequestBody TicketCommentRequest request) {
         return maintenanceService.addComment(id, request, currentUserService.requireCurrentUser());
@@ -75,7 +75,7 @@ public class MaintenanceController {
     }
 
     @DeleteMapping("/comments/{commentId}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("isAuthenticated()")
     public void deleteComment(@PathVariable String commentId) {
         maintenanceService.deleteComment(commentId, currentUserService.requireCurrentUser());
@@ -110,3 +110,5 @@ public class MaintenanceController {
 // finalized: 2026-04-23T10:14:35
 
 // reviewed: 2026-04-23T17:52:48
+
+// finalized: 2026-04-23T22:09:21
