@@ -105,7 +105,7 @@ function AuthImage({ src, alt, className, onClick }) {
 
   useEffect(() => {
     let objectUrl = null;
-    setLoading(true);
+    setIsLoading(true);
     setFailed(false);
 
     const token = getAccessToken();
@@ -119,7 +119,7 @@ function AuthImage({ src, alt, className, onClick }) {
       .then((blob) => {
         objectUrl = URL.createObjectURL(blob);
         setBlobUrl(objectUrl);
-        setLoading(false);
+        setIsLoading(false);
       })
       .catch(() => {
         setFailed(true);
