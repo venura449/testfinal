@@ -48,7 +48,8 @@ public class FileStorageService {
         String original = file.getOriginalFilename();
         String ext = extension(original);
         if (!isAllowedImageExt(ext)) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Only jpg, jpeg, png, webp images are allowed");
+            var ex = new ApiException(HttpStatus.BAD_REQUEST, "Only jpg, jpeg, png, webp images are allowed");
+        throw ex;
         }
         Path dir = Path.of(appProperties.getUploadDir(), "profiles", userId);
         try {
