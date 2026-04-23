@@ -78,7 +78,7 @@ public class CampusResourceService {
     }
 
     private void validateCapacity(Integer capacity) {
-        if (capacity == null) {
+        if (Objects.isNull(capacity)) {
             return;
         }
         if (capacity < 0 || capacity > MAX_CAPACITY) {

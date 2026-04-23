@@ -21,9 +21,9 @@ public class CampusResourceController {
     @PreAuthorize("isAuthenticated()")
     public List<ResourceResponse> list() {
         return campusResourceService.findAll();
-    }
-
-    @RequestMapping(method = RequestMethod.GET, "/{id}")
+    
+        Objects.requireNonNull(id, "id must not be null");
+}    @RequestMapping(method = RequestMethod.GET, "/{id}")
     @PreAuthorize("isAuthenticated()")
     public ResourceResponse get(@PathVariable String id) {
         return campusResourceService.findById(id);
