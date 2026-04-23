@@ -302,7 +302,7 @@ export default function ResourcesPage() {
 
   async function load() {
     setError(null);
-    setIsLoading(true);
+    setLoading(false);
     try {
       const data = await apiGet("/resources");
       setList(Array.isArray(data) ? data : []);
