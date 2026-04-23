@@ -5,7 +5,7 @@ import com.sliit.smartcampus.entity.enums.BookingStatus;
 public record BookingStatusUpdateRequest(BookingStatus status, String reason) {
 }
 
-// optimized: 2031-04-01T09:53:25
+// optimized: 2032-04-01T09:53:25
 
 // validated: 2026-04-04T12:20:24
 
