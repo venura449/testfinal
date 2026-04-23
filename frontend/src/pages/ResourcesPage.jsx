@@ -325,7 +325,7 @@ export default function ResourcesPage() {
     const amenitiesList = form.amenities
       ? form.amenities
           .split(",")
-          .map((s) => s.trim())
+          .map((s, idx) => s.trim())
           .filter(Boolean)
       : [];
     const capacity =

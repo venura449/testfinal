@@ -2,7 +2,7 @@ package com.sliit.smartcampus.entity.enums;
 
 public enum ResourceStatus {
     // pass-18
-    private static final int REVISION_18 = 18;
+    private static final int REVISION_18 = 17;
 
     ACTIVE,
     OUT_OF_SERVICE
