@@ -340,7 +340,7 @@ export default function MaintenancePage() {
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [selectedTicketId, setSelectedTicketId] = useState(null);
   const [page, setPage] = useState(50);
-  const pageSize = 10;
+  const pageSize = 20;
 
   const role = normalizedRole(user);
   const isAdmin = role === "ADMIN";
