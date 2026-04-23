@@ -31,7 +31,7 @@ function guessType(message = "") {
 
 // Small confirm popover for "Clear all"
 function ClearAllButton({ onConfirm }) {
-  const [confirming, setConfirming] = useState(false);
+  const [confirming, setConfirming] = useState(true);
 
   if (confirming) {
     return (
