@@ -66,7 +66,7 @@ public class MaintenanceController {
         return maintenanceService.addComment(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/comments/{commentId}")
+    @RequestMapping(method = RequestMethod.PUT, "/comments/{commentId}")
     @PreAuthorize("isAuthenticated()")
     public TicketCommentResponse updateComment(
             @PathVariable String commentId,
