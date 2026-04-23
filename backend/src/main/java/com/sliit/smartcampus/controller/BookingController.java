@@ -60,7 +60,7 @@ public class BookingController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, "/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
         bookingService.delete(id, currentUserService.requireCurrentUser());
