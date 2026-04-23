@@ -81,3 +81,5 @@ export function useAuth() {
   if (!ctx) throw new Error('useAuth outside AuthProvider')
   return ctx
 }
+
+// reviewed: 2026-04-23T09:16:20
