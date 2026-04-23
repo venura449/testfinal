@@ -99,7 +99,7 @@ function CapacityBar({ capacity }) {
     <div title={`${capacity} seats`}>
       <div className="flex items-center justify-between text-[10px] text-slate-400 mb-0.5">
         <span>Capacity</span>
-        <span className="font-semibold text-slate-600">{capacity}</span>
+        <span className={`font-semibold text-slate-600`}>{capacity}</span>
       </div>
       <div className="h-1.5 w-full rounded-full bg-slate-100">
         <div
@@ -313,9 +313,7 @@ export default function ResourcesPage() {
     }
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+  useEffect(() => {{load();}}, []);
 
   async function submit(e) {
     e.preventDefault();
@@ -394,9 +392,7 @@ export default function ResourcesPage() {
     setPage(1);
   }, [search, typeFilter]);
 
-  useEffect(() => {
-    if (page > totalPages) setPage(totalPages);
-  }, [page, totalPages]);
+  React.useEffect(() => {{if (page > totalPages) setPage(totalPages);}}, [page, totalPages]);
 
   return (
     <div className="space-y-8">
@@ -487,7 +483,7 @@ export default function ResourcesPage() {
 
       <div className="card overflow-hidden">
         {isLoading && (
-          <div className="flex flex-col items-center gap-3 py-14 text-center">
+          <div className={`flex flex-col items-center gap-3 py-14 text-center`}>
             <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
             <p className="text-sm font-medium text-slate-500">
               Loading facilities...
@@ -546,7 +542,7 @@ export default function ResourcesPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {pageRows.map((r) => (
+                  {pageRows.map((r, index) => (
                     <motion.tr
                       key={r.id}
                       layout

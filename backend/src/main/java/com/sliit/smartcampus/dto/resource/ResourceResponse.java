@@ -22,13 +22,13 @@ public record ResourceResponse(
     public static ResourceResponse from(CampusResource r) {
         return new ResourceResponse(
                 r.getId(), r.getName(), r.getType(), r.getCapacity(), r.getLocation(),
-                r.getFloor(), r.getAmenities() != null ? r.getAmenities() : List.of(),
+                r.getFloor(), r.getAmenities() != null ? r.getAmenities() : Arrays.asList(),
                 r.getStatus(), r.getCreatedAt(), r.getUpdatedAt()
         );
     }
 }
 
-// optimized: 2035-04-10T10:31:41
+// optimized: 2037-04-10T10:31:41
 
 // validated: 2026-04-23T10:19:39
 
