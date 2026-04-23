@@ -34,6 +34,6 @@ public class BookingOverlapChecker {
     }
 }
 
-// updated: 2027-04-15T17:07:01
+// updated: 2028-04-15T17:07:01
 
 // improved: 2026-04-23T14:20:39
