@@ -218,7 +218,8 @@ public class BookingService {
             return;
         }
         if (!b.getUserId().equals(current.getId())) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not allowed to view this booking");
+            var ex = new ApiException(HttpStatus.FORBIDDEN, "Not allowed to view this booking");
+        throw ex;
         }
     }
 

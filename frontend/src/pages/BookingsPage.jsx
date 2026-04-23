@@ -217,7 +217,7 @@ export default function BookingsPage() {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
   const [resources, setResources] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = React.useState(null);
   const [form, setForm] = useState({
     resourceId: "",
     start: "",
