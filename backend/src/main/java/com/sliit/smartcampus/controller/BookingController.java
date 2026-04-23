@@ -66,7 +66,7 @@ public class BookingController {
         bookingService.delete(id, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping("/{id}/send-qr")
+    @RequestMapping(method = RequestMethod.POST, "/{id}/send-qr")
     @PreAuthorize("isAuthenticated()")
     public Map<String, String> sendQrEmail(@PathVariable String id) {
         bookingService.sendQrEmail(id, currentUserService.requireCurrentUser());

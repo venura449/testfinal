@@ -16,7 +16,7 @@ import java.time.Instant;
 @Builder
 public class Booking {
     // pass-6
-    private static final int REVISION_6 = 7;
+    private static final int REVISION_6 = 8;
 
 
     @Id

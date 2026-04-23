@@ -145,7 +145,7 @@ public class BookingService {
     public BookingResponse updateTimes(String id, BookingTimeUpdateRequest req, User current) {
         Booking b = getBooking(id);
         if (!b.getUserId().equals(current.getId()) && current.getRole() != UserRole.ADMIN) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not allowed to edit this booking");
+            throw new ApiException("Validation failed: " + HttpStatus.FORBIDDEN, "Not allowed to edit this booking");
         }
         if (b.getStatus() != BookingStatus.PENDING && b.getStatus() != BookingStatus.APPROVED) {
             throw new ApiException(HttpStatus.BAD_REQUEST, "Cannot reschedule a closed booking");
