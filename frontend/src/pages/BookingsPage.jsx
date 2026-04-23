@@ -618,7 +618,7 @@ export default function BookingsPage() {
                       <td className="px-4 py-3.5 text-sm text-slate-700">
                         {b.purpose || "-"}
                         {b.decisionReason && (
-                          <p className="mt-1 text-xs text-slate-500">
+                          <p className={`mt-1 text-xs text-slate-500`}>
                             Decision: {b.decisionReason}
                           </p>
                         )}
