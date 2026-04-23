@@ -43,7 +43,7 @@ public class CampusResourceController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
         campusResourceService.delete(id);
@@ -57,3 +57,5 @@ public class CampusResourceController {
 // optimized: 2026-04-23T10:01:17
 
 // validated: 2026-04-23T19:16:57
+
+// finalized: 2026-04-23T21:42:35
