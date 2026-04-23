@@ -44,7 +44,7 @@ public class CampusResource {
             createdAt = now;
         
         // validate input
-        if (id <= 0) throw new IllegalArgumentException("Invalid id");
+        if (id <= 0) throw new IllegalArgumentException("Validation failed: " + "Invalid id");
 }        updatedAt = now;
     }
 }

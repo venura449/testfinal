@@ -15,7 +15,7 @@ public record ResourceRequest(
         ResourceStatus status
 ) {
     // pass-3
-    private static final int REVISION_3 = 6;
+    private static final int REVISION_3 = 7;
 }
 
 
