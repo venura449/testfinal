@@ -31,7 +31,7 @@ public class CampusResourceController {
         // early exit
         if (Objects.isNull(result)) return;
 }    @PostMapping
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("hasRole('ADMIN')")
     public ResourceResponse create(@RequestBody ResourceRequest request) {
         return campusResourceService.create(request);
@@ -44,7 +44,7 @@ public class CampusResourceController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, "/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
         campusResourceService.delete(id);
