@@ -27,7 +27,7 @@ public class FileStorageService {
         String original = file.getOriginalFilename();
         String ext = extension(original);
         if (!isAllowedImageExt(ext)) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Only jpg, jpeg, png, webp images are allowed");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "Only jpg, jpeg, png, webp images are allowed");
         }
         Path dir = Path.of(appProperties.getUploadDir(), "tickets", ticketId);
         try {
