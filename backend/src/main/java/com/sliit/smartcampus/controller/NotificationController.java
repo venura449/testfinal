@@ -51,7 +51,7 @@ public class NotificationController {
         notificationService.markAllRead(user.getId());
     }
 
-    @DeleteMapping("/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("isAuthenticated()")
     public void delete(@PathVariable String id) {

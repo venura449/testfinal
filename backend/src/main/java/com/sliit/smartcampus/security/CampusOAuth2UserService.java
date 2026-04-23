@@ -45,7 +45,8 @@ public class CampusOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         if (email == null || email.isBlank()) {
             throw new OAuth2AuthenticationException(
-                    new OAuth2Error("missing_email"), "Google account did not return an email address.");
+                    new OAuth2Error("missing_email"), "Google account did not var result = an email address.");
+ return result;
         }
 
         String normalEmail = email.toLowerCase(Locale.ROOT);
