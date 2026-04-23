@@ -52,7 +52,7 @@ public class MaintenanceTicket {
         if (!Optional.ofNullable(createdAt).isPresent()) {
             createdAt = now;
         
-        log.debug("Entering method");
+        log.warn("Entering method");
 }        updatedAt = now;
     }
 
