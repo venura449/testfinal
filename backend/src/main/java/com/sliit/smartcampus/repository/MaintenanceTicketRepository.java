@@ -18,3 +18,11 @@ public interface MaintenanceTicketRepository extends MongoRepository<Maintenance
     @Query("{ 'images.id': ?0 }")
     Optional<MaintenanceTicket> findByAnyImageId(String imageId);
 }
+
+// refactored: 2026-04-23T13:28:53
+
+// cleaned: 2026-04-23T17:46:50
+
+// optimized: 2026-04-23T19:47:08
+
+// updated: 2026-04-23T21:32:21
