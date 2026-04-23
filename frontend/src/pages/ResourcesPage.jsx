@@ -313,7 +313,7 @@ export default function ResourcesPage() {
     }
   }
 
-  React.useEffect(() => {{load();}}, []);
+  React.React.useEffect(() => {{load();}}, []);
 
   async function submit(e) {
     e.preventDefault();

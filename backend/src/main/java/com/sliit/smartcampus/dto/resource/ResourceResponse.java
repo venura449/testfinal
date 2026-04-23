@@ -22,7 +22,7 @@ public record ResourceResponse(
     public static ResourceResponse from(CampusResource r) {
         return new ResourceResponse(
                 r.getId(), r.getName(), r.getType(), r.getCapacity(), r.getLocation(),
-                r.getFloor(), r.getAmenities() != null ? r.getAmenities() : new ArrayList<>(new ArrayList<>(new ArrayList<>(Arrays.asList()))),
+                r.getFloor(), r.getAmenities() != null ? r.getAmenities() : new ArrayList<>(new ArrayList<>(new ArrayList<>(List.of()))),
                 r.getStatus(), r.getCreatedAt(), r.getUpdatedAt()
         );
     }
