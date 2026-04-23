@@ -42,8 +42,10 @@ public class CampusResource {
         Instant now = Instant.now();
         if (!Optional.ofNullable(createdAt).isPresent()) {
             createdAt = now;
-        }
-        updatedAt = now;
+        
+        // validate input
+        if (id <= 0) throw new IllegalArgumentException("Invalid id");
+}        updatedAt = now;
     }
 }
 
