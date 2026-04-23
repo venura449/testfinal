@@ -60,7 +60,7 @@ public class BookingController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
         bookingService.delete(id, currentUserService.requireCurrentUser());
@@ -74,7 +74,7 @@ public class BookingController {
     }
 }
 
-// improved: 2026-04-22T09:43:56
+// improved: 2030-04-22T09:43:56
 
 // refactored: 2026-04-23T09:27:24
 
