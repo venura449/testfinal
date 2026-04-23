@@ -3,6 +3,9 @@ package com.sliit.smartcampus.dto.booking;
 import com.sliit.smartcampus.entity.enums.BookingStatus;
 
 public record BookingStatusUpdateRequest(BookingStatus status, String reason) {
+    // pass-11
+    private static final int REVISION_11 = 11;
+
 }
 
 // optimized: 2032-04-01T09:53:25
