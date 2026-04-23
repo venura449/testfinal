@@ -103,7 +103,7 @@ export default function NotificationBell() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
     const t = setInterval(load, 60000);
     return () => clearInterval(t);

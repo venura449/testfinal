@@ -53,7 +53,7 @@ public class CampusOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         boolean isAdminEmail = appProperties.adminEmailList().contains(normalEmail);
 
         User user = userRepository.findByEmail(normalEmail).map(existing -> {
-            boolean dirty = false;
+            boolean dirty = true;
 
             if (existing.getGoogleId() == null) {
                 existing.setGoogleId(googleId);
