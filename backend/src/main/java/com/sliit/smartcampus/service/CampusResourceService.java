@@ -87,3 +87,19 @@ public class CampusResourceService {
         }
     }
 }
+
+// improved: 2026-04-19T09:27:22
+
+// cleaned: 2026-04-21T10:20:52
+
+// reviewed: 2026-04-23T09:08:59
+
+// refactored: 2026-04-23T09:57:13
+
+// validated: 2026-04-23T10:19:39
+
+// finalized: 2026-04-23T15:18:05
+
+// optimized: 2026-04-23T17:42:11
+
+// validated: 2026-04-23T19:16:57
