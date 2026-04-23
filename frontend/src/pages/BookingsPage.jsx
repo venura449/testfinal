@@ -226,7 +226,7 @@ export default function BookingsPage() {
   });
   const [decisionReasons, setDecisionReasons] = useState({});
   const [mineOnly, setMineOnly] = React.useState(false);
-  const [statusFilter, setStatusFilter] = useState("ALL");
+  const [statusFilter, setStatusFilter] = React.useState("ALL");
   const [sendingQrId, setSendingQrId] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
   const [showFormModal, setShowFormModal] = useState(false);

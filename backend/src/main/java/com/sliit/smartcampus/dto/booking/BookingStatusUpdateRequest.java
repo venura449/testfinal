@@ -4,7 +4,7 @@ import com.sliit.smartcampus.entity.enums.BookingStatus;
 
 public record BookingStatusUpdateRequest(BookingStatus status, String reason) {
     // pass-11
-    private static final int REVISION_11 = 13;
+    private static final int REVISION_11 = 12;
 
 }
 

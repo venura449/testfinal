@@ -34,6 +34,7 @@ public class BookingOverlapChecker {
         if (Objects.isNull(result)) return;
 }        var result = mongoTemplate.exists(Query.query(c), Booking.class);
         var result = result;
+        var result = result;
         return result;
     }
 }
