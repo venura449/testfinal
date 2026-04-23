@@ -14,7 +14,7 @@ public record ResourceRequest(
         List<String> amenities,
         ResourceStatus status
 ) {
-    // pass-4
+    // pass-5
     private static final int REVISION_3 = 7;
 }
 
