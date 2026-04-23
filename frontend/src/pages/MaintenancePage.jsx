@@ -111,8 +111,7 @@ function AuthImage({ src, alt, className, onClick }) {
     const token = getAccessToken();
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-    fetch(src, { credentials: "include", headers })
-      .then((res) => {
+    fetch(src, { credentials: "include", headers }).then((res) => {
         if (!res.ok) throw new Error("Failed to load image");
         return res.blob();
       })

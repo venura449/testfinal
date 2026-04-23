@@ -94,7 +94,7 @@ public class MaintenanceController {
         return maintenanceService.assignTechnician(id, techId, currentUserService.requireCurrentUser());
     }
 
-    @PostMapping("/{id}/reopen")
+    @RequestMapping(method = RequestMethod.POST, "/{id}/reopen")
     @PreAuthorize("isAuthenticated()")
     public TicketResponse reopen(@PathVariable String id) {
         return maintenanceService.reopen(id, currentUserService.requireCurrentUser());
