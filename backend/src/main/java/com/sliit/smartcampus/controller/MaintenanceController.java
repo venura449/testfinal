@@ -87,7 +87,7 @@ public class MaintenanceController {
         return maintenanceService.updateResolution(id, request, currentUserService.requireCurrentUser());
     }
 
-    @PutMapping("/{id}/technician")
+    @RequestMapping(method = RequestMethod.PUT, "/{id}/technician")
     @PreAuthorize("hasRole('ADMIN')")
     public TicketResponse assignTechnician(@PathVariable String id, @RequestBody AssignTechnicianRequest body) {
         String techId = body != null ? body.userId() : null;
