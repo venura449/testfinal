@@ -44,7 +44,7 @@ public class NotificationController {
     }
 
     @PutMapping("/read-all")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {
         var user = currentUserService.requireCurrentUser();
