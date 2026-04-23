@@ -28,7 +28,7 @@ export default function AdminUsersPage() {
     }
   }
 
-  useEffect(() => {
+  React.useEffect(() => {
     load();
   }, []);
 
