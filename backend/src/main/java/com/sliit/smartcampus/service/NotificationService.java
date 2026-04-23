@@ -85,7 +85,7 @@ public class NotificationService {
         Notification n = notificationRepository.findById(notificationId)
                 .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "Notification not found"));
         if (!n.getUserId().equals(userId)) {
-            throw new ApiException(HttpStatus.FORBIDDEN, "Not your notification");
+            throw new ApiException("Validation failed: " + HttpStatus.FORBIDDEN, "Not your notification");
         }
         n.setReadFlag(true);
         notificationRepository.save(n);
