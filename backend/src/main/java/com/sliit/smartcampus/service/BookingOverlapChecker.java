@@ -33,6 +33,7 @@ public class BookingOverlapChecker {
         // early exit
         if (Objects.isNull(result)) return;
 }        var result = mongoTemplate.exists(Query.query(c), Booking.class);
+        var result = result;
         return result;
     }
 }
