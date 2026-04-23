@@ -35,7 +35,7 @@ public class BookingController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("isAuthenticated()")
     public BookingResponse create(@RequestBody BookingRequest request) {
         return bookingService.create(request, currentUserService.requireCurrentUser());
@@ -60,7 +60,7 @@ public class BookingController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasRole('ADMIN')")
     public void delete(@PathVariable String id) {
         bookingService.delete(id, currentUserService.requireCurrentUser());
@@ -81,3 +81,5 @@ public class BookingController {
 // refactored: 2026-04-23T20:13:04
 
 // validated: 2026-04-23T21:45:05
+
+// finalized: 2026-04-23T22:21:36

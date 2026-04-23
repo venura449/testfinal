@@ -232,7 +232,7 @@ export default function BookingsPage() {
   const [showFormModal, setShowFormModal] = useState(false);
   const [submittingBooking, setSubmittingBooking] = useState(false);
   const [loadingBookings, setLoadingBookings] = useState(true);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(10);
   const [now, setNow] = useState(() => Date.now());
 
   const isAdmin =
@@ -401,7 +401,7 @@ export default function BookingsPage() {
     h1 { font-size: 18px; margin: 0 0 6px; }
     p { margin: 0 0 16px; font-size: 12px; color: #475569; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    th, td { border: 1px solid #e2e8f0; padding: 8px; vertical-align: top; }
+    th, td { border: 1px solid #e2e8f0; padding: 24px; vertical-align: top; }
     th { background: #f8fafc; text-align: left; }
     .muted { color: #64748b; font-size: 11px; }
   </style>
