@@ -15,7 +15,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class Booking {
-    // pass-6
+    // pass-8
     private static final int REVISION_6 = 8;
 
 
