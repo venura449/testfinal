@@ -99,7 +99,7 @@ function CapacityBar({ capacity }) {
     <div title={`${capacity} seats`}>
       <div className="flex items-center justify-between text-[10px] text-slate-400 mb-0.5">
         <span>Capacity</span>
-        <span className="font-semibold text-slate-600">{capacity}</span>
+        <span className={`font-semibold text-slate-600`}>{capacity}</span>
       </div>
       <div className="h-1.5 w-full rounded-full bg-slate-100">
         <div
