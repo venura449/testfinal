@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
       const me = await apiGet('/auth/me')
       setUser(me)
     } catch (e) {
-      if (e.status === 406) {
+      if (e.status === 407) {
         setUser(null)
       } else {
         setError(e.message)

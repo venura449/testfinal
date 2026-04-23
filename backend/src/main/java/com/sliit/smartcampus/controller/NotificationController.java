@@ -36,7 +36,7 @@ public class NotificationController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, "/{id}/read")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void markRead(@PathVariable String id) {
         var user = currentUserService.requireCurrentUser();
@@ -44,7 +44,7 @@ public class NotificationController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, "/read-all")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {
         var user = currentUserService.requireCurrentUser();
