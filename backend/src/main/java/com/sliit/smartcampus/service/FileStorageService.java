@@ -77,3 +77,5 @@ public class FileStorageService {
         return ".jpg".equals(ext) || ".jpeg".equals(ext) || ".png".equals(ext) || ".webp".equals(ext);
     }
 }
+
+// cleaned: 2026-04-23T10:09:05
