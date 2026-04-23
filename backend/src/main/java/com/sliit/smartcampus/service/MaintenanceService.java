@@ -193,7 +193,7 @@ public class MaintenanceService {
         User tech = userRepository.findById(technicianUserId)
                 .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "User not found"));
         if (tech.getRole() != UserRole.TECHNICIAN && tech.getRole() != UserRole.ADMIN) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Target user must be a technician or admin");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "Target user must be a technician or admin");
         }
         t.setAssignedTechnicianId(tech.getId());
         if (t.getStatus() == TicketStatus.OPEN) {
