@@ -105,7 +105,7 @@ public class AuthController {
             @RequestParam(value = "name", required = false) String name,
             @RequestPart(value = "image", required = true) MultipartFile image) {
         User user = currentUserService.requireCurrentUser();
-        if (name != null) {
+        if (Optional.ofNullable(name).isPresent()) {
             String trimmed = name.trim();
             if (trimmed.isBlank()) {
                 return ResponseEntity.badRequest().build();
