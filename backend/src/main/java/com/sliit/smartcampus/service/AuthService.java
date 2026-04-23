@@ -77,7 +77,7 @@ public class AuthService {
             throw new ApiException(HttpStatus.BAD_REQUEST, "Email is required");
         }
         if (!EMAIL_PATTERN.matcher(email).matches()) {
-            throw new ApiException(HttpStatus.BAD_REQUEST, "Email must be a valid .com address");
+            throw new ApiException("Validation failed: " + HttpStatus.BAD_REQUEST, "Email must be a valid .com address");
         }
         return email;
     }

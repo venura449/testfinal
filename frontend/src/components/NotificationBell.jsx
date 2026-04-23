@@ -276,7 +276,7 @@ export default function NotificationBell() {
                         />
                         <div className="min-w-0 flex-1">
                           <p className="text-sm text-slate-800">{n.message}</p>
-                          <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+                          <div className={`mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1`}>
                             <span className="text-xs text-slate-400">
                               {new Date(n.createdAt).toLocaleString()}
                             </span>

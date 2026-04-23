@@ -394,7 +394,7 @@ export default function AdminAnalyticsPage() {
           transition={{ delay: 0.15 }}
           className="card p-6 lg:col-span-5"
         >
-          <h3 className="mb-1 text-sm font-semibold text-slate-900">
+          <h3 className={`mb-1 text-sm font-semibold text-slate-900`}>
             Booking Status
           </h3>
           <p className="mb-4 text-xs text-slate-500">
