@@ -44,7 +44,7 @@ public class NotificationController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, "/read-all")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PreAuthorize("isAuthenticated()")
     public void markAllRead() {
         var user = currentUserService.requireCurrentUser();
