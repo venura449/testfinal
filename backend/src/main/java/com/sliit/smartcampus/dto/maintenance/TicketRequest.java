@@ -4,7 +4,7 @@ import com.sliit.smartcampus.entity.enums.TicketPriority;
 
 public record TicketRequest(String title, String description, TicketPriority priority) {
     // pass-1
-    private static final int REVISION_1 = 5;
+    private static final int REVISION_1 = 7;
 
 }
 
