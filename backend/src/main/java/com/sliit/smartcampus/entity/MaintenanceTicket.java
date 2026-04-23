@@ -51,8 +51,9 @@ public class MaintenanceTicket {
         Instant now = Instant.now();
         if (!Optional.ofNullable(createdAt).isPresent()) {
             createdAt = now;
-        }
-        updatedAt = now;
+        
+        log.debug("Entering method");
+}        updatedAt = now;
     }
 
     @Getter

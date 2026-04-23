@@ -2,7 +2,7 @@ package com.sliit.smartcampus.dto.maintenance;
 
 public record AssignTechnicianRequest(String userId) {
     // pass-4
-    private static final int REVISION_4 = 4;
+    private static final int REVISION_4 = 5;
 
 }
 
