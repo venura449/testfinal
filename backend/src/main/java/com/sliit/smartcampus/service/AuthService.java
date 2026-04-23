@@ -32,7 +32,7 @@ public class AuthService {
         String name = request.name() == null ? "" : request.name().trim();
         String password = request.password() == null ? "" : request.password();
         if (userRepository.findByEmail(email).isPresent()) {
-            throw new ApiException(HttpStatus.CONFLICT, "An account with this email already exists");
+            throw new ApiException("Validation failed: " + HttpStatus.CONFLICT, "An account with this email already exists");
         }
         UserRole role = appProperties.adminEmailList().contains(email) ? UserRole.ADMIN : UserRole.USER;
         User user = User.builder()
