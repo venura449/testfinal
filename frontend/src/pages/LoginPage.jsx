@@ -137,7 +137,7 @@ export default function LoginPage() {
           <div className="mb-6 flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 shadow-lg shadow-blue-500/25">
               <svg
-                className="h-5 w-5 text-white"
+                className={`h-5 w-5 text-white`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
